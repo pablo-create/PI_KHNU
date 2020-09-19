@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div>
+        <h3>Кредити</h3>
+        <table>
+            <tr>
+                <td><p>Тип кредиту</p></td>
+                <td><p>Максимальна сума кредиту</p></td>
+            </tr>
+            @foreach (var a in ViewBag.Credits)
+            {
+                <tr>
+                    <td><p>@a.Type</p></td>
+                    <td><p>@a.MaxQuantity</p></td>
+                    <td><p><a href="/Home/Order/@a.Id">Замовити</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+
+
