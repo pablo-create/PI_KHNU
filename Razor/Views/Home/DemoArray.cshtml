@@ -1,0 +1,22 @@
+﻿@model Razor.Models.Restaurant[]
+
+@{
+    ViewBag.Title = "DemoArray";
+    Layout = "~/Views/_BasicLayout.cshtml";
+}
+
+@if (Model.Length > 0)
+{
+    <table>
+        <thead><tr><th>Restaurant</th><th>Rate</th></tr></thead>
+        <tbody> 
+            @foreach (Razor.Models.Restaurant p in Model)
+            {
+                <tr> 
+                    <td>@p.Name </td> 
+                    <td>@p.Rate &#9733; &#9733; &#9733;</td> 
+                </tr>
+             }
+        </tbody>
+    </table> }else{ <h2>No restaurant data</h2>}
+

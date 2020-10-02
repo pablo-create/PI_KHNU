@@ -1,0 +1,53 @@
+﻿@model Razor.Models.Restaurant
+
+@{
+    ViewBag.Title = "DemoExpression";
+}
+
+<table>
+    <thead>
+        <tr><th>Property</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Rate</td><td>@Model.Rate</td></tr>
+        <tr> 
+            <td>Rate Level</td>
+            <td>
+                @switch ((int)Model.Rate)
+                {
+                    case 1:
+                        @: Bad (@Model.Rate)
+                        break;
+                    case 2:
+                        @: Bad (@Model.Rate)
+                        break;
+                    case 3:
+                        @: Bad (@Model.Rate)
+                        break;
+                    case 4:
+                        @: Bad (@Model.Rate)
+                        break;
+                    case 5:
+                        @: Normal (@Model.Rate)
+                        break;
+                    case 6:
+                        @: Normal (@Model.Rate)
+                        break;
+                    case 7:
+                        @: Normal (@Model.Rate)
+                        break;
+                    case 8:
+                        @: Great (@Model.Rate)
+                        break;
+                    case 9:
+                        @: Great (@Model.Rate)
+                        break;
+                    case 10:
+                        @: Great (@Model.Rate)
+                        break;
+                }
+            </td>
+</tbody>
+</table>
+
