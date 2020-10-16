@@ -1,0 +1,21 @@
+﻿@model Bank_Operations.Models.Credit
+@{
+    ViewBag.Title = "Creation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новий кредит</h2>
+
+@using (Html.BeginForm())
+{@Html.LabelFor(model => model.Type, "Тип кредиту")
+<br />
+@Html.EditorFor(model => model.Type)
+<br />
+<br />
+@Html.LabelFor(model => model.MaxQuantity, "Максимальна кількість")
+<br />
+@Html.EditorFor(model => model.MaxQuantity)
+<br />
+<br />
+<input type="submit" value="Додати" />
+}

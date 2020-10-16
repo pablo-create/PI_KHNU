@@ -1,0 +1,27 @@
+﻿@model Bank_Operations.Models.Credit
+@{
+    ViewBag.Title = "Edit Credit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Кредит № @Model.Id </h2> 
+
+    @using(Html.BeginForm("EditCredit", "Home", FormMethod.Post)) { 
+        <fieldset> 
+    @Html.HiddenFor(m => m.Id) 
+    <p> 
+    @Html.LabelFor(m => m.Type, "Тип кредиту") 
+    <br/>
+    @Html.EditorFor(m => m.Type) 
+    </p> 
+    <p> 
+    @Html.LabelFor(m => m.MaxQuantity, "Максимальна cума") 
+    <br/> 
+    @Html.EditorFor(m => m.MaxQuantity) 
+    </p>  
+    <p>
+    <input type = "submit" value = "Відпрвити зміни"/>
+    </p> 
+    </fieldset> 
+    }
+

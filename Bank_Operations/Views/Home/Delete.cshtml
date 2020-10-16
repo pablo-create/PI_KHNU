@@ -1,0 +1,20 @@
+﻿@model Bank_Operations.Models.Credit
+@{
+    ViewBag.Title = "Deleting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Видалити</h2>
+
+<h2> Видалення кредиту </h2>
+<dl>
+    <dt> Тип </dt>
+    <dd> @Html.DisplayFor(model => model.Type) </dd>
+    <dt> Максимальна сума </dt>
+    <dd> @Html.DisplayFor(model => model.MaxQuantity) </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Видалити" />
+}
