@@ -1,0 +1,28 @@
+﻿@model Credit_Relationship.Models.Order
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Видалити</h2>
+
+<h2> Видалення замовлення </h2>
+<dl>
+    <dt> Ім'я </dt>
+    <dd> @Html.DisplayFor(model => model.Person) </dd>
+    <dt> Адреса </dt>
+    <dd> @Html.DisplayFor(model => model.Address) </dd>
+    <dt> Кількість </dt>
+    <dd> @Html.DisplayFor(model => model.Quantity) </dd>
+    <dt> Дата </dt>
+    <dd> @Html.DisplayFor(model => model.Date) </dd>
+    <dt>  Кількість днів </dt>
+    <dd> @Html.DisplayFor(model => model.Days) </dd>
+    <dt> Тип кредиту </dt>
+    <dd> @ViewBag.Credits.Type </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Видалити" />
+}

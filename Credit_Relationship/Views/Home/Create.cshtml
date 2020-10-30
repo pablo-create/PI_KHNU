@@ -1,0 +1,50 @@
+﻿@model Credit_Relationship.Models.Order
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Додавання нового замовлення </h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Замовлення</legend>
+        <p>
+            Ім'я
+            <br />
+            @Html.EditorFor(m => m.Person)
+        </p>
+        <p>
+            Адреса
+            <br />
+            @Html.EditorFor(m => m.Address)
+        </p>
+        <p>
+            Кількість
+            <br />
+            @Html.EditorFor(m => m.Quantity)
+        </p>
+        <p>
+            Дата
+            <br />
+            <input type="date" name="Date"/>
+        </p>
+        <p>
+            Кількість днів
+            <br />
+            @Html.EditorFor(m => m.Days)
+        </p>
+        <p>
+            Тип кредиту
+            <br />
+            @Html.DropDownListFor(model => model.CreditId, ViewBag.Credits as SelectList)
+        </p>
+        <p>
+            <input type="submit" value="Додати замовлення" />
+        </p>
+    </fieldset>
+}
+
+<div> @Html.ActionLink("Список замовлень", "Index") </div>
+

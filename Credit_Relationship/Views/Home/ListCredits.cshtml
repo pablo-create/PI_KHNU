@@ -1,0 +1,27 @@
+﻿@using Credit_Relationship.Models
+@model IEnumerable<Credit>
+
+@{
+    ViewBag.Title = "Кредити";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3></h3>
+    <table>
+        <tr class="header">
+            <td><p>Тип кредиту</p></td>
+            <td><p>Максимальна сума кредиту</p></td>
+            <td></td>
+        </tr>
+        @foreach (Credit b in Model)
+        {
+            <tr>
+                <td><p>@b.Type</p></td>
+                <td><p>@b.MaxQuantity</p></td>
+                <td><p><a href="/Home/CreditDetails/@b.Id">Перегляд</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,23 @@
+﻿@using Credit_Relationship.Models 
+@model Credit
+
+@{ 
+    ViewBag.Title = "Кредит " + @Model.Type; 
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    } 
+<div> 
+    <h4>Кредит @Model.Type</h4> 
+    <hr /> 
+    <dl> 
+    <dt>Максимальна кількість</dt> 
+    <dd> @Html.DisplayFor(model => model.MaxQuantity) </dd>
+    <dt>Замовники</dt> 
+    <dd> 
+        <ul> 
+        @foreach (Order order in Model.Orders){
+            <li>@order.Person (@order.Address)</li>} 
+         </ul> 
+        </dd> 
+        </dl> 
+</div>
+

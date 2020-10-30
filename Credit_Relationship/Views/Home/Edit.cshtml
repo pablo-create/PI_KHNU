@@ -1,0 +1,50 @@
+﻿@model Credit_Relationship.Models.Order
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2> Замовлення № @Model.Id </h2>
+
+@using (Html.BeginForm())
+{
+<fieldset>
+    <legend>Замовлення</legend>
+    @Html.HiddenFor(m => m.Id)
+    <p>
+        Ім'я
+        <br />
+        @Html.EditorFor(m => m.Person)
+    </p>
+    <p>
+        Адреса
+        <br />
+        @Html.EditorFor(m => m.Address)
+    </p>
+    <p>
+        Кількість
+        <br />
+        @Html.EditorFor(m => m.Quantity)
+    </p>
+    <p>
+        Дата
+        <br />
+        @Html.EditorFor(m => m.Date)
+    </p>
+    <p>
+        Кількість днів
+        <br />
+        @Html.EditorFor(m => m.Days)
+    </p>
+    <p>
+        Тип кредиту
+        <br />
+        @Html.DropDownListFor(model => model.CreditId, ViewBag.Credits as SelectList)
+    </p>
+    <p>
+        <input type="submit" value="Зберегти" />
+    </p>
+</fieldset>
+}
+
+<div> @Html.ActionLink("Повернутися до списку замовлень", "Index") </div>

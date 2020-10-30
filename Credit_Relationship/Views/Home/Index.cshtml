@@ -1,0 +1,56 @@
+﻿@model IEnumerable <Credit_Relationship.Models.Order> 
+
+@{ 
+    ViewBag.Title = "Список замовлень кредитів"; 
+    } 
+
+
+<head> 
+
+<style>
+    table {
+        text-align:center;
+    }
+    th {
+        padding: 5px;
+        text-align:center;
+    }
+    td {
+        padding: 5px;
+    }
+
+</style>
+</head>
+<body>
+    <h2> Список замовлень кредитів </h2>
+    <p>
+        @Html.ActionLink("Додати замовлення", "Create")
+    </p>
+    <table>
+        <tr>
+            <th> Ім'я</th>
+            <th>Адреса</th>
+            <th>Кількість</th>
+            <th>Дата</th>
+            <th>Дні</th>
+            <th>Тип кредиту</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Person) </td>
+                <td> @Html.DisplayFor(modelItem => item.Address) </td>
+                <td> @Html.DisplayFor(modelItem => item.Quantity) </td>
+                <td> @Html.DisplayFor(modelItem => item.Date) </td>
+                <td> @Html.DisplayFor(modelItem => item.Days) </td>
+                <td> @Html.DisplayFor(modelItem => item.Credit.Type) </td>
+                <td class="none"><p><a href="/Home/Edit/@item.Id">Редагувати</a></p></td>|
+                <td class="none"><p><a href="/Home/Delete/@item.Id">Видалити</a></p></td>
+            </tr>
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Каталог кредитів", "ListCredits")
+    </p>
+</body>
