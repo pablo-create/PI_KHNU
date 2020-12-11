@@ -1,0 +1,26 @@
+﻿@using Credit_Relationship.Models
+@model IEnumerable<Credit>
+
+@{
+    ViewBag.Title = Resources.Resource.Credits;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3></h3>
+    <table>
+        <tr class="header">
+            <td><p>@Resources.Resource.CreditType</p></td>
+            <td><p>@Resources.Resource.MaxSum</p></td>
+            <td></td>
+        </tr>
+        @foreach (Credit b in Model)
+        {
+            <tr>
+                <td><p>@b.Type</p></td>
+                <td><p>@b.MaxQuantity</p></td>
+            </tr>
+        }
+    </table>
+</div>
+
